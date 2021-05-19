@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+    ul {
+        list-style-type: none;
+        padding: 0;
+        overflow: hidden;
+        background: #28d
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background: #17c;
+
+    }
+
+    #us{
+        float:right;
+    }
+    #log{
+        float:right;
+    }
+    * {
+        box-sizing: border-box;
+    }
+    .title{
+        text-align:center;
+        margin-bottom: 50px;
+    }
+    body {
+        font-family: Arial;
+        font-size: 17px;
+    }
+
+    .firsttable{
+        background: #28d;
+        width: 100%;
+        color: white;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 14px;
+        text-align: left;
+        border-collapse: collapse;
+
+    }
+    .grade{
+        text-align: right;
+    }
+    .firsttable th, td{
+        padding: 10px 10px;
+        padding-right: 205px;
+    }
+
+    .table {
+        width: 100%;
+        font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+        font-size: 14px;
+        border-collapse: collapse;
+        text-align: center;
+        border: 0.5px solid black;
+
+    }
+    .table tbody tr:nth-child(odd){
+        background: #fff;
+    }
+    .table tbody tr:nth-child(even){
+        background: #F7F7F7;
+    }
+
+    .table th, td {
+        border-style: solid;
+        border-width: 0 1px 1px 0;
+        border-color: black;
+        color: black;
+        padding: 10px 10px;
+    }
+
+    .table th:first-child, td:first-child {
+        text-align: left;
+    }
+    tr{
+        height: 70px;
+    }
+    .footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #28d;
+        color: white;
+        text-align: center;
+    }
+
+    a.button {
+        background-color: #28d; /* Green */
+        border: 1px solid green;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+
+    }
+    a.button:hover {
+        background-color: #17c;
+    }
+    .showbutton{
+        margin-bottom: 50px;
+    }
+
+</style>
+<head>
+	<title></title>
+</head>
+<body>
+ <ul>
+  <li><a class="active" th:href="@{/{id}/home(id=${course.getStudent().getStudentID()})}">Home</a></li>
+  
+ 
+  <li id="log"><a href="/perform_logout">Logout</a></li>
+   <li id="us"><a th:href="@{/{id}/profile(id=${course.getStudent().getStudentID()})}" th:text="${course.getStudent().getFirstName()} + ' ' + ${course.getStudent().getLastName()}"></a></li>
+</ul>
+<div class="title">
+	<h1 th:text="'Course : ' + ${course.getCourseName()}"></h1>
+</div>
+<div align="right" class="showbutton">
+	<a th:href="@{/{id}/{courseName}/allWorks(courseName=${course.getCourseName()}, id=${course.getStudent().getStudentID()})}" class="button">Show all works</a>
+</div>
+<div class="scoretable">
+	<table class="firsttable">
+	<tr class="name">
+    		<th>Statement</th>
+    		<th class="grade">Grade</th>
+    	</tr>
+    </table>
+    <table class="table">
+    	
+  <tr>
+  <td>Rk1</td>
+  <td th:text="${course.getRk1()}"></td>
+  
+  </tr>
+ <tr>
+  <td>Rk2</td>
+  <td th:text="${course.getRk2()}"></td>
+  
+ </tr>
+<tr>
+  <td>Rksrd</td>
+  <td>50</td>
+  
+</tr>
+<tr>
+  <td>Final exam</td>
+  <td>50</td>
+  
+</tr>
+<tr>
+  <td>Final score</td>
+  <td th:text="${course.getResult()}"></td>
+  
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>

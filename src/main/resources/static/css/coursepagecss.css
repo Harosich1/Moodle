@@ -1,0 +1,118 @@
+ul {
+  list-style-type: none;
+  margin: 50;
+  padding: 0;
+  overflow: hidden;
+  background: #28d
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+ background: #17c;
+
+}
+
+#us{
+  float:right;
+}
+#log{
+  float:right;
+}
+* {
+  box-sizing: border-box;
+}
+.title{
+  text-align:center; 
+  margin-bottom: 50px;
+}
+body {
+  font-family: Arial;
+  font-size: 17px;
+}
+
+.firsttable{
+    background: #28d;
+  width: 100%;
+  color: white;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+text-align: left;
+border-collapse: collapse;
+
+}
+.grade{
+  text-align: right;
+}
+.firsttable th, td{
+  padding: 10px 10px;
+  padding-right: 205px;
+}
+
+.table {
+width: 100%;
+font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+font-size: 14px;
+border-collapse: collapse;
+text-align: center;
+border: 0.5px solid black;
+
+}
+.table tbody tr:nth-child(odd){
+  background: #fff;
+}
+.table tbody tr:nth-child(even){
+  background: #F7F7F7;
+}
+
+.table th, td {
+border-style: solid;
+border-width: 0 1px 1px 0;
+border-color: black;
+color: black;
+padding: 10px 10px;
+}
+
+.table th:first-child, td:first-child {
+text-align: left;
+}
+tr{
+  height: 70px;
+}
+.footer {
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #28d;
+   color: white;
+   text-align: center;
+}
+
+a.button {
+  background-color: #28d; /* Green */
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+a.button:hover {
+  background-color: #17c;
+}
+.showbutton{
+  margin-bottom: 50px;
+}

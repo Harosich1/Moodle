@@ -1,0 +1,50 @@
+ul {
+  list-style-type: none;
+  margin: 50;
+  padding: 0;
+  overflow: hidden;
+  background: #28d
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+ background: #17c;
+
+}
+
+#us{
+  float:right;
+}
+#log{
+  float:right;
+}
+.avatar {
+  vertical-align: middle;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+   margin-left: 200px;
+}
+.content{
+  margin-right: 400px;
+ 
+}
+.text{
+  padding-top: 50px;
+  margin-right:20px;
+}
+h1{
+  text-align:center; 
+  margin-bottom: 50px;
+}

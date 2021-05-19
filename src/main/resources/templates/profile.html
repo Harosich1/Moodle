@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style>
+	ul {
+		list-style-type: none;
+		padding: 0;
+		overflow: hidden;
+		background: #28d
+	}
+
+	li {
+		float: left;
+	}
+
+	li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+	}
+
+	li a:hover {
+		background: #17c;
+
+	}
+
+	#us{
+		float:right;
+	}
+	#log{
+		float:right;
+	}
+	.avatar {
+		vertical-align: middle;
+		width: 220px;
+		height: 220px;
+		border-radius: 50%;
+		margin-left: 200px;
+	}
+	.content{
+		margin-right: 400px;
+
+	}
+	.text{
+		padding-top: 50px;
+		margin-right:20px;
+	}
+	h1{
+		text-align:center;
+		margin-bottom: 50px;
+	}
+</style>
+<head>
+	<title></title>
+</head>
+<body>
+ <ul>
+  <li><a class="active" th:href="@{/{id}/home(id=${student.getStudentID()})}">Home</a></li>
+  
+ 
+  <li id="log"><a href="/perform_logout">Logout</a></li>
+   <li id="us"><a th:href="@{/{id}/profile(id=${student.getStudentID()})}" th:text="${student.getFirstName()} + ' ' + ${student.getLastName()}"></a></li>
+</ul>
+<div>
+	<h1 th:text="${student.getFirstName()} + ' ' + ${student.getLastName()}"></h1>
+</div>
+<div>
+	<div>
+	<img src="images/avatar.png" alt="Avatar" class="avatar" align="left" >
+    </div>
+	<div class="content" align="center">
+		<div class="text">
+	<h2 th:text="'Id : ' + ${student.getStudentID()}"></h2>
+	<h2 th:text="'Email : ' + ${student.getEmail()}"></h2>
+	
+		</div>
+	</div>
+</div>
+</body>
+</html>
